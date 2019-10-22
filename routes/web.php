@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'HomeController@home');
+Route::get('/pertama', 'HomeController@pertama');
+Route::get('/kedua', 'HomeController@kedua');
+Route::get('/ketiga', 'HomeController@ketiga');
+Route::get('/login', 'LoginController@login');
+Route::get('/register', 'LoginController@register');
