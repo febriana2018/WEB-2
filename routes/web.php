@@ -12,9 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('base');
 });
 
-Route::get('/dashboard', 'DashboardController@dashboard');
-Route::get('/tabel', 'DashboardController@tabel');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
+Route::get('/base', 'DashboardController@base')->name('base');
+Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
+Route::get('/chart', 'DashboardController@chart')->name('chart');
+Route::get('/tabel', 'DashboardController@tabel')->name('tabel');
+
 
