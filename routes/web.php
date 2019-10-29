@@ -21,3 +21,5 @@ Route::get('/kedua', 'HomeController@kedua');
 Route::get('/ketiga', 'HomeController@ketiga');
 Route::get('/login', 'LoginController@login');
 Route::get('/register', 'LoginController@register');
+
+Route::resource('/Produk', 'ProductController');
