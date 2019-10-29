@@ -7,18 +7,18 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        return view('home');
+        return view('Awal/home');
     }
 
     public function pertama(){
-        return view('pertama');
+        return view('Awal/pertama');
     }
 
     public function kedua(){
-        return view('kedua');
+        return view('Awal/kedua');
     }
 
     public function ketiga(){
-        return view('ketiga');
+        return view('Awal/ketiga');
     }
 }
