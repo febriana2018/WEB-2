@@ -23,3 +23,4 @@ Route::get('/login', 'LoginController@login');
 Route::get('/register', 'LoginController@register');
 
 Route::resource('/Produk', 'ProductController');
+Route::resource('/kategori', 'CategoryController');
