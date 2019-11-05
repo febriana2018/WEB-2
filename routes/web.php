@@ -23,5 +23,9 @@ Route::get('/base', 'DashboardController@base')->name('base');
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 Route::get('/chart', 'DashboardController@chart')->name('chart');
 Route::get('/tabel', 'DashboardController@tabel')->name('tabel');
+Route::get('/produk', 'DashboardController@produk')->name('produk');
 
+Route::get('/ktambah', 'DashboardController@tambahKategori')->name('tambahKategori');
+Route::get('/ptambah', 'DashboardController@tambahProduk')->name('tambahProduk');
 
+Route::resource('/kategori', 'KategoriController');

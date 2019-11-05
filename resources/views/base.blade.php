@@ -105,18 +105,22 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('kategori.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Kategori</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{route('produk')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Produk</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
 
       <div class="container-fluid">
 
-      <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="{{route('base')}}">Home</a>
-          </li>
-        </ol>
-      
       @yield('konten')
 
       </div>
