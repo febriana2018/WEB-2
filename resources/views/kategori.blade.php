@@ -1,4 +1,4 @@
-@extends('base');
+@extends('base')
 @section('konten')
 
 <ol class="breadcrumb">
@@ -12,7 +12,7 @@
           <div class="card-header">
             <i class="fas fa-table"></i>
             Data Table Example
-            <a href="{{route('tambahKategori')}}" button type="button" class="btn btn-primary">Tambah</button> </a>
+            <a href="{{route('kategori.create')}}" button type="button" class="btn btn-primary">Tambah</button> </a>
             </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -21,19 +21,28 @@
                   <tr>
                     <th>ID Kategori</th>
                     <th>Kategori</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>ID Kategori</th>
                     <th>Kategori</th>
+                    <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
                 @foreach($kategori as $value)
                   <tr>
                     <td width="1">{{$value->id_kategori}}</td>
-                    <td>{{$value->kategori}}</td>
+                    <td>{{$value->nama}}</td>
+                    <td>
+                      <a href="{{route('kategori.edit', $value->id_kategori)}}" class="btn btn-success">Edit</a>
+                      <form action="{{route('kategori.destroy', $value->id_kategori)}}" method="POST"></form>
+                      @csrf
+                      @method('DELETE')
+                        <button class="btn btn-danger btn-sm" type="submit">Hapus</button>
+                    </td>
                   </tr>
                  @endforeach
     

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\crud;
+use App\Kategori;
 
 class KategoriController extends Controller
 {
@@ -14,7 +14,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $data = crud::all();
+        $data = Kategori::all();
         return view('kategori')->with('kategori', $data);
     }
 
@@ -25,7 +25,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('tambahKategori');
     }
 
     /**
@@ -36,7 +36,14 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama'=>'required',
+        ]);
+        $kategori = new Kategori([
+            'nama' => $request->input('nama')
+        ]);
+        $kategori->save();
+        return redirect('kategori');
     }
 
     /**
@@ -58,7 +65,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Kategori::where('id_kategori', '=', $id)->firstOrFail();
+        return view('editKategori')->with('kategori', $data);
     }
 
     /**
@@ -70,7 +78,10 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(['nama'=>'required',]);
+        $data = ['nama'=> $request->input('nama'),];
+        Kategori::where('id_kategori', $id)->update($data);
+        return redirect('kategori');
     }
 
     /**
@@ -81,6 +92,7 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Kategori::where('id_kategori', $id)->delete();
+        return redirect('kategori');
     }
 }

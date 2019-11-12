@@ -13,11 +13,12 @@
     <title>Tambah Kategori</title>
   </head>
   <body>
-  <form method="POST" action="{{ route('kategori.store') }}">
+  <form action ="{{route('kategori.update', $kategori->id_kategori)}}" method="POST">
   @csrf
+  @method('PUT')
   <div class="form-group">
     <label for="exampleInputEmail1">Kategori</label>
-    <input type="text" name="nama" class="form-control" id="kategori" placeholder="Enter Category Name">
+    <input type="text" name="nama" class="form-control" id="kategori"  value="{{$kategori->nama}}" placeholder="Enter Category Name">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
