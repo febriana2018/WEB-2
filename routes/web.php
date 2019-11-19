@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('base');
-});
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
+// Route::get('/', function () {
+//     return view('base');
 // });
+
+Route::get('/', function () {
+    return view('Awal/welcome');
+});
 
 Route::get('/base', 'DashboardController@base')->name('base');
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
@@ -29,3 +29,4 @@ Route::get('/ktambah', 'DashboardController@tambahKategori')->name('tambahKatego
 Route::get('/ptambah', 'DashboardController@tambahProduk')->name('tambahProduk');
 
 Route::resource('/kategori', 'KategoriController');
+Auth::routes();

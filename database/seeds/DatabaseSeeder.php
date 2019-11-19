@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Pelanggan;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        factory(Pelanggan::class)->create();
+        
     }
 }
